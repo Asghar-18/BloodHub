@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donor Registration - BloodCare</title>
+    <link rel="icon" href="../Icons/blood-drop.png">
+    <link rel="stylesheet" href="asghar.css">
+
+</head>
+
+<body>
+    <header class="header">
+        <div class="container">
+            <a href="../Index/asgahr.html" class="header-logo">💉 BloodCare</a>
+            <div class="header-nav">
+                <a href="#">About</a>
+                <a id="registrationLink" href="#">Donor Registration</a>
+                <a href="#">Blood Bank</a>
+                <a href="#">Contact</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="registration">
+        <div class="container">
+            <h1>Donor Registration</h1>
+            <form action="process_registration.php" method="POST">
+                <label for="name">Full Name:</label>
+                <input type="text" id="name" name="name" placeholder="Enter your name" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+
+                <label for="blood_type">Blood Type:</label>
+                <select id="blood_type" name="blood_type" required>
+                    <option value="A+">A+</option>
+                    <option value="A-">A-</option>
+                    <option value="B+">B+</option>
+                    <option value="B-">B-</option>
+                    <option value="O+">O+</option>
+                    <option value="O-">O-</option>
+                    <option value="AB+">AB+</option>
+                    <option value="AB-">AB-</option>
+                </select>
+
+                <label for="medical_history">Medical History:</label>
+                <textarea id="medical_history" name="medical_history" placeholder="Enter your Medical Hos"
+                    required></textarea>
+
+                <label for="appointment_date">Preferred Appointment Date:</label>
+                <input type="date" id="date" name="date" min="2023-09-28" max="2023-12-31" required>
+
+                <button type="submit">Register</button>
+            </form>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            &copy; 2023 BloodCare. All rights reserved.
+        </div>
+    </footer>
+</body>
+
+</html>

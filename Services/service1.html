@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blood Donation Information</title>
+    <link rel="icon" href="../Icons/blood-drop.png">
+    <style>
+        /* Your CSS styles go here */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Header Styles */
+        .header {
+            background-color: #4a90e2;
+            color: #fff;
+            padding: 10px 0;
+        }
+
+        .header .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            /* Separates logo and navigation */
+            align-items: center;
+        }
+
+        .header-logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .header-nav {
+            text-align: right;
+            /* Align the text to the right */
+        }
+
+        .header-nav a {
+            text-decoration: none;
+            font-weight: bold;
+            margin-left: 15px;
+            /* Adjust margin to separate links */
+            color: #fff;
+        }
+
+        .header-nav a:hover {
+            text-decoration: underline;
+            color: #333;
+        }
+
+        h1 {
+            font-size: 36px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        p {
+            font-size: 18px;
+            line-height: 1.5;
+        }
+
+        .footer {
+            background-color: #f0f4f8;
+            color: #333;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        .registration-button {
+            /* Change the background color of the button */
+            background-color: #4a90e2;
+            color: #fff;
+            border: none;
+            border-radius: 10px;
+            /* Change the font size of the button */
+            font-size: 20px;
+            /* Add some padding around the button */
+            padding: 10px 20px;
+            /* Change the cursor to a pointer when hovering over the button */
+            cursor: pointer;
+            /* Remove the underline from the link text */
+            text-decoration: none;
+            /* Set the display property to inline-block and specify the width */
+            display: inline-block;
+            width: 200px;
+            /* Adjust to your desired width */
+            /* Center the text horizontally and vertically */
+            text-align: center;
+
+        }
+
+
+        .registration-button:hover {
+            /* Change the background color of the button when hovering over it */
+            background-color: #333;
+            /* Add a shadow effect to the button when hovering over it */
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        }
+
+        @media screen and (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+
+            .registration-button {
+                width: 100%;
+            }
+        }
+
+        .footer {
+            background-color: #4a90e2;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+        }
+
+        .footer .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <div class="container">
+            <a href="../Index/asgahr.html" class="header-logo">💉 BloodCare</a>
+            <nav class="header-nav">
+                <a href="#">About</a>
+                <a id="registrationLink" href="#">Donor Registration</a>
+                <a href="#">Blood Bank</a>
+                <a href="#">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <h2>Why Donate Blood?</h2>
+        <p>Donating blood is a noble act that can save lives. Blood transfusions are essential for various medical
+            procedures and emergencies, including surgeries, accident victims, cancer treatments, and more.</p>
+
+        <h2>Who Can Donate?</h2>
+        <p>Generally, healthy individuals aged 17 to 65 and weighing at least 110 pounds are eligible to donate blood.
+            However, specific eligibility criteria may vary by region and blood bank. It's essential to check with your
+            local blood donation center for the most accurate information.</p>
+
+        <h2>The Donation Process</h2>
+        <p>The blood donation process is simple and safe. It typically involves registration, a brief medical
+            examination, the donation itself, and a short rest with refreshments. Donors are encouraged to hydrate and
+            eat before donating.</p>
+
+        <h2>Benefits of Donating Blood</h2>
+        <p>Donating blood not only helps those in need but also offers several health benefits for the donors. It can
+            reduce the risk of certain diseases, improve cardiovascular health, and provide a sense of fulfillment by
+            contributing to the community.</p>
+
+        <h2>Where to Donate</h2>
+        <p>You can donate blood at local blood donation centers, hospitals, or during mobile blood drives organized by
+            blood banks and organizations. Search for a donation center near you and schedule an appointment.</p>
+
+        <!-- Registration Button (Linking to the donor registration form HTML file) -->
+        <a href="../Donor_registration/donor.html" class="registration-button">Register Now</a>
+
+
+        <h2>Donation FAQs</h2>
+        <p>If you have questions about blood donation, visit our <a href="#">FAQ page</a> for answers to common queries.
+        </p>
+
+        <h2>Get Involved</h2>
+        <p>Consider becoming a regular blood donor and spreading awareness about the importance of blood donation. Your
+            contribution can save lives and make a significant impact on your community.</p>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            &copy; 2023 BloodCare. All rights reserved.
+        </div>
+    </footer>
+</body>
+
+</html>

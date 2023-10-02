@@ -1,0 +1,467 @@
+        /* Global Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Header Styles */
+        .bg-indigo-50 {
+            background-color: #f0f4f8;
+        }
+
+        /* Header Styles */
+        .header {
+            background-color: #4a90e2;
+            color: #fff;
+            padding: 25px 20px;
+        }
+
+        .header .container {
+            display: flex;
+            justify-content: space-between;
+            /* Separates logo and navigation */
+            align-items: center;
+        }
+
+        .header-logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .header-nav {
+            text-align: right;
+            /* Align the text to the right */
+        }
+
+        .header-nav a {
+            text-decoration: none;
+            font-weight: bold;
+            margin-left: 15px;
+            /* Adjust margin to separate links */
+            color: #fff;
+        }
+
+        .header-nav a:hover {
+            text-decoration: underline;
+        }
+
+        /* Hero Section Styles */
+        .hero {
+            background-image: url('../Icons/red-blood-cells.jpg');
+            background-size: cover;
+            background-position: center;
+            color: #fff;
+            padding: 200px 0;
+            text-align: center;
+            /* margin-bottom: 20px; */
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                padding: 100px 0;
+            }
+        }
+
+        .hero h1 {
+            font-size: 36px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+
+        .hero-buttons {
+            margin-top: 20px;
+        }
+
+        .hero-buttons a {
+            text-decoration: none;
+            background-color: #4a90e2;
+            color: #fff;
+            font-weight: bold;
+            padding: 10px 20px;
+            border-radius: 5px;
+            margin-right: 20px;
+        }
+
+        .hero-buttons a:last-child {
+            margin-right: 0;
+        }
+
+        .hero-buttons a:hover {
+            background-color: #357abd;
+        }
+
+        /* Feature Section Styles */
+        .features {
+            background-color: #4a90e2;
+            color: #fff;
+            padding: 100px 20px;
+            text-align: center;
+        }
+
+        .features .flex {
+            display: flex;
+            justify-content: space-evenly;
+            align-items: flex-start;
+        }
+
+        .features .feature-item {
+            flex: 0 0 calc(30% - 20px);
+            text-align: center;
+            padding: 20px;
+            width: 300px;
+            height: 100%;
+            /* border: 1px solid #e2e8f0; */
+            border-radius: 5px;
+            color: #000;
+            background-color: #fff;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .features .feature-left {
+            width: 300px;
+            height: 100%;
+            margin-right: 20px;
+            background: url(Blood.jpg) no-repeat center/cover;
+
+
+        }
+
+        .feature-center {
+            background: url(download.jpeg) no-repeat center/cover;
+
+        }
+
+        .features .feature-right {
+            background: url(red-blood-cells.jpg) no-repeat center/cover;
+
+            margin-left: 20px;
+        }
+
+        .features h2 {
+            font-size: 30px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .features p {
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+
+        .features .feature-title {
+            font-size: 24px;
+            font-weight: bold;
+            padding-top: 15px;
+            margin-bottom: 10px;
+        }
+
+        .features .feature-description {
+            font-size: 18px;
+        }
+
+        .features .feature-learn-more {
+            text-decoration: none;
+            background-color: #fff;
+            color: #4a90e2;
+            font-weight: bold;
+            padding: 10px 20px;
+            border-radius: 5px;
+            margin-top: 10px;
+            display: inline-block;
+        }
+
+        .features .feature-learn-more:hover {
+            background-color: #e2e8f0;
+        }
+
+        @media (max-width: 768px) {
+            .features .flex {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .features .feature-item {
+                width: 100%;
+                margin-right: 0;
+                margin-left: 0;
+                margin-bottom: 20px;
+            }
+        }
+
+        /* Donation Highlights Section Styles */
+        .donation-highlights {
+            background-color: #f0f4f8;
+            padding: 100px 0;
+            text-align: center;
+        }
+
+        .donation-highlights h2 {
+            font-size: 30px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .donation-highlights-description {
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+
+        .donation-highlights-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 30px;
+        }
+
+        .highlight {
+            background-color: #fff;
+            border: 1px solid #e2e8f0;
+            border-radius: 5px;
+            padding: 30px;
+            margin: 0 20px 20px;
+            flex: 1;
+            max-width: 300px;
+        }
+
+        .highlight h3 {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .highlight-description {
+            font-size: 16px;
+            color: #333;
+        }
+
+        /* Call to Action Section Styles */
+        .cta {
+            background-color: #4a90e2;
+            color: #fff;
+            padding: 100px 0;
+            text-align: center;
+        }
+
+        .cta h2 {
+            font-size: 30px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .cta p {
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+
+        .cta-buttons {
+            margin-top: 20px;
+        }
+
+        .cta-buttons a {
+            text-decoration: none;
+            background-color: #fff;
+            color: #4a90e2;
+            font-weight: bold;
+            padding: 10px 20px;
+            border-radius: 5px;
+            margin-right: 20px;
+        }
+
+        .cta-buttons a:last-child {
+            margin-right: 0;
+        }
+
+        .cta-buttons a:hover {
+            background-color: #e2e8f0;
+        }
+
+        /* FAQ Section Styles */
+        .faq {
+            background-color: #f0f0f0;
+            padding: 80px 0;
+            text-align: left;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding : 30px;
+        }
+
+        .faq h2 {
+            font-size: 36px;
+            font-weight: bold;
+            margin-bottom: 40px;
+            color: #333;
+        }
+
+        .faq-question {
+            font-size: 20px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 10px;
+        }
+
+        .faq-answer {
+            font-size: 18px;
+            color: #555;
+            line-height: 1.5;
+        }
+
+
+        /* Media Queries for Responsiveness */
+        @media (max-width: 768px) {
+
+            /* Adjust styles for smaller screens here */
+            .header {
+                padding: 15px 0;
+            }
+
+            .header-logo {
+                font-size: 20px;
+            }
+
+            .header-nav {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                background-color: #4a90e2;
+                width: 100%;
+                text-align: center;
+                z-index: 1;
+            }
+
+            .header-nav.active {
+                display: flex;
+            }
+
+            .header-nav a {
+                margin: 10px;
+            }
+
+            .hero {
+                padding: 80px 0;
+            }
+
+            .hero h1 {
+                font-size: 28px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+        }
+
+        .contact {
+            color: #fff;
+            display: flex;
+            background-color: #4a90e2;
+            padding: 50px 50px;
+            flex-direction: row;
+            /* text-align: center; */
+        }
+
+        .contact .first {
+            margin-right: 260px;
+            margin-bottom: 20px;
+        }
+
+        .contact .head {
+
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #000;
+
+        }
+
+        .contact .loc {
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .contact .loc p {
+            font-size: 16px;
+            margin: 5px 0;
+        }
+
+        .contact .num {
+            font-size: 16px;
+            margin: 5px 0;
+        }
+
+        .contact .links {
+            text-align: center;
+            align-items: center;
+            justify-content: center;            
+            /* margin-top: 30px; */
+        }
+
+        .contact .use {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #000000;
+        }
+
+        .contact .ful {
+            list-style: none;
+            margin: 10px 0;
+        }
+
+        .contact .ful a {
+            color: rgb(255, 255, 255);
+            font-size: 15px;
+            text-decoration: none;
+            /* color: #4a90e2; */
+            font-weight: bold;
+            transition: all 0.3s;
+
+
+        }
+
+        .contact .ful a:hover {
+            /* transform: translate(15px,15px); */
+            color: #000000;
+        }
+
+        .contact .last {
+            margin-top: 30px;
+        }
+
+        .contact .last h2 {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .class img {
+            z-index: -1;
+        }
+
+        .class h1 {
+            z-index: 1;
+        }
+
+        .first {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .firstimg {
+            width: 400px;
+            height: 200px;
+            border-radius: 5px;
+        }
+
+        .images {
+            display: flex;
+            flex-direction: row;
+        }

@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Add a meta description tag -->
+    <meta name="description" content="BloodCare is a web application that helps manage blood inventory and donation.">
+    <title>Inventory Management - BloodCare</title>
+    <link rel="stylesheet" href="inventory_style.css">
+    <!-- Add a link to favicon -->
+    <link rel="icon" href="../Icons/blood-drop.png">
+    <!-- Import Google Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700|Lato:400,700&display=swap" rel="stylesheet">
+    <style>
+        /* Global Styles */
+        body {
+            font-family: Lato, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+
+        .header .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            /* Separates logo and navigation */
+            align-items: center;
+        }
+
+        .header {
+            /* Use a gradient background for the header */
+            background-image: linear-gradient(to right, #4a90e2, #6ab7f7);
+            color: #fff;
+            padding: 10px 0;
+        }
+
+        .header-logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .header-nav {
+            text-align: right;
+            /* Align the text to the right */
+        }
+
+        .header-nav a {
+            text-decoration: none;
+            font-weight: bold;
+            margin-left: 15px;
+            /* Adjust margin to separate links */
+            color: #fff;
+        }
+
+        /* Add hover effects to the header-nav links */
+        .header-nav a:hover {
+            /* Change the color on hover */
+            color: #333;
+        }
+
+        /* Inventory Section Styles */
+        .inventory {
+            padding: 20px;
+        }
+
+        h1 {
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        table,
+        th,
+        td {
+            border: 1px solid #ccc;
+        }
+
+        th,
+        td {
+            padding: 10px;
+            text-align: center;
+        }
+
+        table th {
+            background-color: #4a90e2;
+            color: #fff;
+        }
+
+        /* Add box-shadow to the table */
+        table {
+            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Use icons or images to represent the blood types in the table */
+        .blood-type {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .blood-type img {
+            width: 20px;
+            height: auto;
+            margin-right: 5px;
+        }
+
+        /* Footer Styles */
+        .footer {
+            background-color: #f0f4f8;
+            color: #333;
+            padding: 10px 0;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <div class="container">
+            <a href="../Index/asgahr.html" class="header-logo">💉 BloodCare</a>
+            <div class="header-nav">
+                <a href="#">About</a>
+                <a id="registrationLink" href="#">Donor Registration</a></li>
+                <a href="#">Blood Bank</a>
+                <a href="#">Contact</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="inventory">
+        <div class="container">
+            <h1>Inventory Management</h1>
+            <!-- Display inventory data here -->
+            <table>
+                <!-- Add a caption for the table -->
+                <caption>Blood Inventory Status</caption>
+                <thead>
+                    <tr>
+                        <th>Blood Type</th>
+                        <th>Units Available</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <!-- <td class="blood-type"><img src="blood-type-a.png" alt="A+"> A+</td> -->
+                        <!-- Use an image for A+ -->
+                        <td>A+</td>
+                        <td>50</td>
+                    </tr>
+                    <tr>
+                        <!-- <td class="blood-type"><img src="blood-a-minus.png" alt="A-"> A-</td> -->
+                        <!-- Use an image for A- -->
+                        <td>A-</td>
+                        <td>30</td>
+                    </tr>
+                    <!-- Add more rows for other blood types -->
+                    <tr>
+                        <!-- <td class="blood-type"><img src="blood-b-plus.png" alt="B+"> B+</td> -->
+                        <!-- Use an image for B+ -->
+                        <td>B+</td>
+                        <td>40</td>
+                    </tr>
+                    <tr>
+                        <!-- <td class="blood-type"><img src="blood-b-minus.png" alt="B-"> B-</td> -->
+                        <!-- Use an image for B- -->
+                        <td>B-</td>
+                        <td>20</td>
+                    </tr>
+                    <tr>
+                        <!-- <td class="blood-type"><img src="blood-ab-plus.png" alt="AB+"> AB+</td> -->
+                        <!-- Use an image for AB+ -->
+                        <td>AB+</td>
+                        <td>10</td>
+                    </tr>
+                    <tr>
+                        <!-- <td class="blood-type"><img src="blood-ab-minus.png" alt="AB-"> AB-</td> -->
+                        <!-- Use an image for AB- -->
+                        <td>AB-</td>
+                        <td>5</td>
+                    </tr>
+                    <tr>
+                        <!-- <td class="blood-type"><img src="blood-o-plus.png" alt="O+"> O+</td> -->
+                        <td>O+</td>
+                        <!-- Use an image for O+ -->
+                        <td>60</td>
+                    </tr>
+                    <tr>
+                        <!-- <td class="blood-type"><img src="blood-o-minus.png" alt="O-"> O-</td> -->
+                        <td>O-</td>
+                        <!-- Use an image for O- -->
+                        <td>15</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>Note: Alerts and notifications for low blood supply will be displayed here.</p>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            © 2023 BloodCare. All rights reserved.
+        </div>
+    </footer>
+
+    <!-- Add a script element to link to a JavaScript file -->
+    <script src="inventory_script.js"></script>
+
+</body>
+
+</html>

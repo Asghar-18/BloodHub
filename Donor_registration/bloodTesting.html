@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blood Testing</title>
+    <link rel="icon" href="../Icons/blood-drop.png">
+    <link rel="stylesheet" href="asghar.css">
+    <style>
+        /* h1 {
+            text-align: center;
+            margin-top: 20px;
+            color: #4a90e2;
+        }
+
+        form {
+            max-width: 600px;
+            margin: 0 auto;
+            margin-top: 10px;
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        input[type="date"],
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        textarea {
+            resize: vertical;
+        }
+
+        input[type="submit"] {
+            background-color: #4a90e2;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            font-size: 18px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #357ABD;
+        }
+
+        p {
+            text-align: center;
+            margin-top: 20px;
+        } */
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <div class="container">
+            <a href="../Index/asgahr.html" class="header-logo1">💉 BloodCare</a>
+            <div class="header-nav">
+                <a href="#">About</a>
+                <a href="#">Blood Bank</a>
+                <a href="#">Contact</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="registration">
+        <div class="container">
+            <h1>Blood Test Scheduling</h1>
+            <form class="registration-form" action="submit.php" method="post">
+                <label for="full_name">Full Name:</label>
+                <input type="text" id="full_name" name="full_name" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" name="phone" required>
+
+                <label for="appointment_date">Preferred Appointment Date:</label>
+                <input type="date" id="appointment_date" name="appointment_date" required>
+
+                <label for="test_type">Type of Blood Test:</label>
+                <select id="test_type" name="test_type">
+                    <option value="CBC">Complete Blood Count (CBC)</option>
+                    <option value="BMP">Basic Metabolic Panel (BMP)</option>
+                    <option value="Lipid Panel">Lipid Panel</option>
+                    <option value="Other">Other (Specify below)</option>
+                </select>
+
+                <label for="comments">Additional Comments (if any):</label>
+                <textarea id="comments" name="comments" rows="4" cols="50"></textarea>
+
+                <label for="additional_info">Additional Information (optional):</label>
+                <textarea id="additional_info" name="additional_info" rows="4" cols="50"></textarea>
+
+                <div class="form-group">
+                    <button type="submit" class="submit-button">Submit</button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- <p>Once you submit your appointment request, our team will contact you to confirm the date and time of your blood
+        testing appointment.</p> -->
+        <footer class="footer">
+            <div class="container">
+                &copy; 2023 BloodCare. All rights reserved.
+            </div>
+        </footer>
+</body>
+
+</html>

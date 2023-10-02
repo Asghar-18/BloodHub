@@ -1,0 +1,154 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header Styles */
+.header {
+    background-color: #4a90e2;
+    color: #fff;
+    padding: 10px 0;
+}
+
+.header .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    /* Separates logo and navigation */
+    align-items: center;
+}
+
+.header-logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #fff;
+    text-decoration: none;
+}
+
+.header-nav {
+    text-align: right;
+    /* Align the text to the right */
+}
+
+.header-nav a {
+    text-decoration: none;
+    font-weight: bold;
+    margin-left: 15px;
+    /* Adjust margin to separate links */
+    color: #fff;
+}
+
+.header-nav a:hover {
+    text-decoration: underline;
+    color: #333;
+}
+
+/* Appointment Scheduling Section Styles */
+.registration {
+    padding: 20px;
+    background-color: #f0f4f8;
+}
+
+h1 {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+/* Add this to your appointment_style.css file */
+
+
+
+/* Style for the form container */
+.registration .container {
+max-width: 600px;
+margin: 0 auto;
+}
+
+/* Style for form heading */
+.registration h1 {
+font-size: 28px;
+font-weight: bold;
+margin-bottom: 20px;
+color: #333;
+}
+
+/* Style for form groups */
+.registration .form-group {
+margin-bottom: 15px;
+}
+
+/* Style for labels */
+.registration label {
+display: block;
+font-weight: bold;
+margin-bottom: 5px;
+color: #333;
+}
+
+/* Style for form input fields */
+.registration input[type="text"],
+.registration input[type="email"],
+.registration input[type="tel"],
+.registration input[type="date"],
+.appointment input[type="time"],
+.registration select,
+.registration textarea {
+width: 100%;
+padding: 10px;
+margin-top: 5px;
+margin-bottom: 10px;
+border: 1px solid #ccc;
+border-radius: 5px;
+font-size: 16px;
+color: #333;
+}
+
+/* Style for the submit button */
+.registration .submit-button {
+background-color: #4a90e2;
+color: #fff;
+padding: 10px 20px;
+border: none;
+border-radius: 5px;
+font-size: 18px;
+cursor: pointer;
+}
+
+/* Style for the submit button on hover */
+.registration .submit-button:hover {
+background-color: #357ABD;
+}
+
+/* Style for the optional reason textarea */
+.registration textarea {
+height: 100px;
+resize: vertical;
+}
+
+/* Style for validation error messages (you can add this if needed) */
+.registration .error-message {
+color: red;
+font-size: 14px;
+margin-top: 5px;
+}
+
+/* Style for success message (you can add this if needed) */
+.registration .success-message {
+color: green;
+font-size: 16px;
+margin-top: 10px;
+}
+
+
+/* Add your appointment scheduling form styles here */
+
+/* Footer Styles */
+.footer {
+    background-color: #f0f4f8;
+    color: #333;
+    padding: 10px 0;
+    text-align: center;
+}
