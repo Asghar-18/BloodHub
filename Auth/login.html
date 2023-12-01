@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Page Title</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,800">
+    <link rel="stylesheet" href="tyles.css"> <!-- You can replace "styles.css" with the actual path to your CSS file -->
+</head>
+<body>
+    <div class="container">
+        <div class="form-container sign-in-container">
+            <form id="signInForm">
+                <h1>Sign In</h1>
+                <input type="email" id="signInEmail" placeholder="Email" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}" title="Enter a valid email address" required>
+                <input type="password" id="signInPassword" placeholder="Password">
+                <a href="forgot_password.html" class="forgot-password">Forgot your password?</a>
+                <button type="button" onclick="signIn()">Sign In</button>
+                <span>or use your account</span>
+                <div class="social-container">
+                    <!-- <a href="#"><img src="facebook-icon.png" alt="Facebook"></a>
+                    <a href="#"><img src="twitter-icon.png" alt="Twitter"></a>
+                    <a href="#"><img src="linkedin-icon.png" alt="LinkedIn"></a> -->
+                </div>
+            </form>
+        </div>
+        <div class="form-container sign-up-container">
+            <form id="signUpForm">
+                <h1>Create Account</h1>
+                <input type="text" id="signUpName" placeholder="Name">
+                <input type="email" id="signUpEmail" placeholder="Email" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}" title="Enter a valid email address" required>
+                <input type="password" id="signUpPassword" placeholder="Password">
+                <button type="button" onclick="signUp()">Sign Up</button>
+                <span>or use your email for registration</span>
+            </form>
+        </div>
+        <div class="overlay-container">
+            <div class="overlay">
+                <div class="overlay-panel overlay-left">
+                    <h2>Welcome Back!</h2>
+                    <p>To keep connected with us, please login with your personal info</p>
+                    <button class="ghost" id="signIn">Sign In</button>
+                </div>
+                <div class="overlay-panel overlay-right">
+                    <h2>Hello, Friend!</h2>
+                    <p>Enter your personal details and start the journey with us</p>
+                    <button class="ghost" id="signUp">Sign Up</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        const signUpButton = document.getElementById('signUp');
+        const signInButton = document.getElementById('signIn');
+        const container = document.querySelector('.container');
+
+        signUpButton.addEventListener('click', () => {
+            container.classList.add('right-panel-active');
+        });
+
+        signInButton.addEventListener('click', () => {
+            container.classList.remove('right-panel-active');
+        });
+
+        function signIn() {
+            // Perform your login logic here
+
+            // For demo purposes, redirect to Asghar.html after a successful login
+            window.location.href = '/index/asgahr.html';
+        }
+
+        function signUp() {
+            // Perform your sign-up logic here
+
+            // For demo purposes, redirect to Asghar.html after a successful sign-up
+            window.location.href = '/index/asgahr.html';
+        }
+    </script>
+</body>
+</html>

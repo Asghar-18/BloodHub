@@ -2,25 +2,24 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
+     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Add a meta description tag -->
-    <meta name="description" content="BloodCare is a web application that helps manage blood inventory and donation.">
-    <title>Inventory Management - BloodCare</title>
-    <link rel="stylesheet" href="inventory_style.css">
-    <!-- Add a link to favicon -->
+    <title>Blood Donation Information</title>
     <link rel="icon" href="../Icons/blood-drop.png">
-    <!-- Import Google Fonts -->
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700|Lato:400,700&display=swap" rel="stylesheet">
     <style>
-        /* Global Styles */
+        /* Your CSS styles go here */
         body {
-            font-family: Lato, sans-serif;
+            font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
         }
 
+        /* Header Styles */
+        .header {
+            background-color: #4a90e2;
+            color: #fff;
+            /* padding: 10px 0; */
+        }
 
         .header .container {
             max-width: 1200px;
@@ -31,14 +30,6 @@
             /* Separates logo and navigation */
             align-items: center;
         }
-
-        .header {
-            /* Use a gradient background for the header */
-            background-image: linear-gradient(to right, #4a90e2, #6ab7f7);
-            color: #fff;
-            padding: 10px 0;
-        }
-
         .header-logo {
             font-size: 24px;
             font-weight: bold;
@@ -47,23 +38,27 @@
         }
 
         .header-nav {
-            text-align: right;
-            /* Align the text to the right */
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
         }
+
 
         .header-nav a {
             text-decoration: none;
             font-weight: bold;
-            margin-left: 15px;
-            /* Adjust margin to separate links */
             color: #fff;
+            padding: 10px 15px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
         }
 
-        /* Add hover effects to the header-nav links */
         .header-nav a:hover {
-            /* Change the color on hover */
-            color: #333;
+            background-color: #357abd;
         }
+
+
 
         /* Inventory Section Styles */
         .inventory {
@@ -119,10 +114,18 @@
 
         /* Footer Styles */
         .footer {
-            background-color: #f0f4f8;
-            color: #333;
-            padding: 10px 0;
+            background-color: #4a90e2;
+            color: #fff;
             text-align: center;
+            padding: 10px 0;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .footer .container {
+            max-width: 1200px;
+            margin: 0 auto;
         }
     </style>
 </head>
@@ -211,12 +214,9 @@
 
     <footer class="footer">
         <div class="container">
-            © 2023 BloodCare. All rights reserved.
+            &copy; 2023 BloodCare. All rights reserved.
         </div>
     </footer>
-
-    <!-- Add a script element to link to a JavaScript file -->
-    <script src="inventory_script.js"></script>
 
 </body>
 
