@@ -3,17 +3,9 @@ const path = require('path');
 const session = require('express-session');
 const app = express();
 const port = process.env.PORT || 3000;
-
-// In-memory storage for user and admin data (replace this with a database in production)
-const users = [
-  { id: 1, name: 'User', email: 'user@example.com', password: 'user123' },
-  // Add more users as needed
-];
-
-const admins = [
-  { id: 1, email: 'admin@example.com', password: 'admin123' },
-  // Add more admins as needed
-];
+const authController = require('./controllers/authController');
+const dashboardRoutes = require('./routes/dashboardRoutes');
+const inventoryRoutes = require('./routes/inventoryRoutes');
 
 // Use the express.urlencoded() middleware for parsing form data
 app.use(express.urlencoded({ extended: true }));
@@ -26,6 +18,7 @@ app.use(session({
   saveUninitialized: true,
 }));
 
+
 // Authentication middleware
 function isAuthenticated(req, res, next) {
   // Check if the user has a valid session
@@ -36,82 +29,29 @@ function isAuthenticated(req, res, next) {
   }
 }
 
-// Define routes
-app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'views', 'Auth', 'login.html'));
+
+
+
+app.get('/', authController.loginPage); // Display login page
+app.post('/api/signin', authController.signIn); // Handle sign-in
+
+app.get('/signup', (req, res) => {
+  // Adjust the path to your sign-up HTML file
+  res.sendFile(path.join(__dirname, '..', 'views', 'Auth', 'signup.html'));
 });
 
-app.post('/api/signin', (req, res) => {
-  const { email, password } = req.body;
+// New route to handle sign-up POST request
+app.post('/api/signup', authController.signUp);
 
-  // Check if the user is an admin
-  const admin = admins.find((a) => a.email === email && a.password === password);
-  if (admin) {
-    req.session.userId = admin.id; // Set the user ID in the session
-    res.redirect('/dashboard');
-    return;
-  }
-
-  // Check if the user is a regular user
-  const user = users.find((u) => u.email === email && u.password === password);
-  if (user) {
-    req.session.userId = user.id; // Set the user ID in the session
-    res.redirect('/asghar');
-  } else {
-    res.status(401).json({ message: 'Invalid credentials' });
-  }
-});
 
 // Apply authentication middleware to protected routes
-app.use(isAuthenticated);
+// Dashboard routes, all protected
+app.use(isAuthenticated, dashboardRoutes);
+
+// Inventory routes, all protected
+app.use(isAuthenticated, inventoryRoutes);
 
 // Protected routes accessible after login
-
-// Index route
-app.get('/asghar', (req, res) => {
-  res.sendFile(path.join(__dirname, 'views', 'Index', 'asghar.html'));
-});
-
-// Dashboard route
-app.get('/dashboard', (req, res) => {
-  res.sendFile(path.join(__dirname, 'views', 'dashboard.html'));
-});
-
-
-// Inventory routes
-app.get('/Inventory', (req, res) => {
-  res.sendFile(path.join(__dirname, 'views', 'Inventory', 'Inventory.html'));
-});
-
-// Service routes
-app.get('/service1', (req, res) => {
-  res.sendFile(path.join(__dirname, 'views', 'Services', 'service1.html'));
-});
-
-app.get('/service2', (req, res) => {
-  res.sendFile(path.join(__dirname, 'views', 'Services', 'service2.html'));
-});
-
-app.get('/service3', (req, res) => {
-  res.sendFile(path.join(__dirname, 'views', 'Services', 'service3.html'));
-});
-
-// Donor Registration routes
-app.get('/Appointment', (req, res) => {
-  res.sendFile(path.join(__dirname, 'views', 'Donor Registration', 'Appointment.html'));
-});
-
-app.get('/bloodTesting', (req, res) => {
-  res.sendFile(path.join(__dirname, 'views', 'Donor Registration', 'bloodTesting.html'));
-});
-
-app.get('/Customer', (req, res) => {
-  res.sendFile(path.join(__dirname, 'views', 'Donor Registration', 'Customer.html'));
-});
-
-app.get('/donor', (req, res) => {
-  res.sendFile(path.join(__dirname, 'views', 'Donor Registration', 'donor.html'));
-});
 
 // Start the server
 app.listen(port, () => {
