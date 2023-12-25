@@ -10,6 +10,10 @@ router.get('/asghar', (req, res) => {
     res.sendFile(path.join(__dirname, '..','views', 'Index', 'asghar.html'));
   });
 
+router.get('/about', (req, res) => {
+    res.sendFile(path.join(__dirname, '..','views', 'about us', 'aboutUs.html'));
+  });
+
 // Inventory routes
 router.get('/Inventory', (req, res) => {
     res.sendFile(path.join(__dirname, '..','views', 'Inventory', 'Inventory.html'));

@@ -3,9 +3,10 @@ const path = require('path');
 const session = require('express-session');
 const app = express();
 const port = process.env.PORT || 3000;
-const authController = require('./controllers/authController');
+const authRoutes = require('./routes/authRoutes');
 const dashboardRoutes = require('./routes/dashboardRoutes');
-const inventoryRoutes = require('./routes/inventoryRoutes');
+const userRoutes = require('./routes/userRoutes');
+const donorRoutes = require('./routes/donorRoutes');
 
 // Use the express.urlencoded() middleware for parsing form data
 app.use(express.urlencoded({ extended: true }));
@@ -32,24 +33,15 @@ function isAuthenticated(req, res, next) {
 
 
 
-app.get('/', authController.loginPage); // Display login page
-app.post('/api/signin', authController.signIn); // Handle sign-in
-
-app.get('/signup', (req, res) => {
-  // Adjust the path to your sign-up HTML file
-  res.sendFile(path.join(__dirname, '..', 'views', 'Auth', 'signup.html'));
-});
-
-// New route to handle sign-up POST request
-app.post('/api/signup', authController.signUp);
-
+app.use(authRoutes);
 
 // Apply authentication middleware to protected routes
 // Dashboard routes, all protected
 app.use(isAuthenticated, dashboardRoutes);
 
 // Inventory routes, all protected
-app.use(isAuthenticated, inventoryRoutes);
+app.use(isAuthenticated, userRoutes);
+app.use(isAuthenticated,donorRoutes);
 
 // Protected routes accessible after login
 
