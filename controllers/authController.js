@@ -59,8 +59,12 @@ exports.signUpPage = (req, res) => {
 exports.signUp = async (req, res) => {
     try {
         const { name, email, password } = req.body;
-
-        // Validate email and password here (e.g., check format, length)
+        
+        
+        const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+        if (!emailRegex.test(email)) {
+            return res.status(400).json({ message: 'Invalid email format' });
+        }
 
         // Insert the new user into the database with plain text password (not secure)
         const query = 'INSERT INTO users (username, email, password) VALUES (?, ?, ?)';

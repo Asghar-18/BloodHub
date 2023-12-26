@@ -14,7 +14,10 @@ exports.donor_registration = async (req, res) => {
         // Extract form data from request body
         const { full_name, email, phone_number, blood_type, medical_history, appointment_date } = req.body;
 
-        // TODO: Add input validation and sanitization here
+        const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+        if (!emailRegex.test(email)) {
+            return res.status(400).json({ message: 'Invalid email format' });
+        }
 
         // Prepare the database query
         const query = 'INSERT INTO donors (user_id, full_name, email, phone_number, blood_type, medical_history, appointment_date) VALUES (?, ?, ?, ?, ?, ?)';
@@ -23,14 +26,11 @@ exports.donor_registration = async (req, res) => {
         db.query(query, [user_id, full_name, email, phone_number, blood_type, medical_history, appointment_date], async (error, result) =>{
             if (error){
                 res.status(500).send(`Error registering new donor: `+ error);
+                return;
             }
             res.status(200).send('Donor registered successfully');
 
         })
-
-
-
-
         
     } catch (err) {
         console.error('Error caught:', err);

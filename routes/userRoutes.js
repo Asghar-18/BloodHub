@@ -15,9 +15,9 @@ router.get('/about', (req, res) => {
   });
 
 // Inventory routes
-router.get('/Inventory', (req, res) => {
-    res.sendFile(path.join(__dirname, '..','views', 'Inventory', 'Inventory.html'));
-  });
+// router.get('/Inventory', (req, res) => {
+//     res.sendFile(path.join(__dirname, '..','views', 'Inventory', 'Inventory.html'));
+//   });
   
   // Service routes
   router.get('/service1', (req, res) => {
