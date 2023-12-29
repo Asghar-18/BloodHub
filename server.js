@@ -10,6 +10,12 @@ const userRoutes = require('./routes/userRoutes');
 const donorRoutes = require('./routes/donorRoutes');
 const bloodTestingRoutes = require('./routes/bloodTestingRoutes');
 const customerRoutes = require('./routes/customerRoutes');
+const userApi = require('./api/userApi');
+const countApi = require('./api/countApi');
+const bloodDataApi = require('./api/bloodDataApi');
+const tableApi = require('./api/tableApi');
+const inventoryApi = require('./api/inventoryApi');
+const addUnitsApi = require('./api/addUnitsApi'); 
 // const inventoryRoutes = require('./routes/inventoryRoutes'); // Adjust the path as necessary
 
 
@@ -44,37 +50,12 @@ app.use(authRoutes);
 
 
 
+app.use(express.json());
 
 // Dashboard routes, all protected
 app.use(isAuthenticated, dashboardRoutes);
-app.get('/inventory', (req, res) => {
-  const sql = 'SELECT blood_type, units_available FROM blood_inventory';
-  db.query(sql, (err, results) => {
-    if (err) {
-        console.error('Database query error:', err);
-        res.status(500).send('Database error');
-        return;
-    } else {
-        console.log(JSON.stringify(results, null, 2)); // Properly formatted log
-        res.render('Inventory/Inventory', { data: results });
-    }
-});
-});
-
-app.get('/api/d_count', (req, res) => {
-  db.query('SELECT donorCount FROM donor_count_view', (err, results) => {
-      if (err) throw err;
-      res.json(results[0]); // Send the first result object
-  });
-});
 
 
-app.get('/api/b_count', (req, res) => {
-  db.query('SELECT donorCount FROM donor_count_view', (err, results) => {
-      if (err) throw err;
-      res.json(results[0]); // Send the first result object
-  });
-});
 
 
 
@@ -87,6 +68,13 @@ app.use(isAuthenticated,bloodTestingRoutes);
 app.use(isAuthenticated,customerRoutes);
 // app.use(isAuthenticated,inventoryRoutes);
 
+
+app.use('/api', userApi);
+app.use('/api', countApi);
+app.use('/api', bloodDataApi);
+app.use('/api', tableApi);
+app.use('/', inventoryApi);
+app.use('/api', addUnitsApi);
 
 // Protected routes accessible after login
 
