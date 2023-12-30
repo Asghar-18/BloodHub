@@ -44,8 +44,10 @@ document.addEventListener('DOMContentLoaded', (event) => {
 });
 
 
+let fetchedData = [];
 
 document.addEventListener('DOMContentLoaded', function() {
+    // Fetch data from the API
     fetch('/api/blood-group-data')
         .then(response => {
             if (!response.ok) {
@@ -54,15 +56,38 @@ document.addEventListener('DOMContentLoaded', function() {
             return response.json();
         })
         .then(data => {
-            // Assuming your API returns an array of objects with 'blood_group' and 'unit_count'
-            const labels = data.map(item => item.blood_type);
-            const units = data.map(item => item.units_available);
-
-            // Render the chart with the fetched data
-            renderChart(labels, units);
+            fetchedData = data; // Store the data for later use
+            const labels = fetchedData.map(item => item.blood_type);
+            const units = fetchedData.map(item => item.units_available);
+            renderChart(labels, units); // Render chart initially
         })
         .catch(error => console.error('Error:', error));
+
+    // Add event listeners to dropdown items
+    document.getElementById('showChart').addEventListener('click', function() {
+        renderChart(fetchedData.map(item => item.blood_type), fetchedData.map(item => item.units_available));
+        document.getElementById('dataDisplayArea').style.display = 'none';
+        document.getElementById('myChart').style.display = 'block';
+    });
+
+    document.getElementById('showTable').addEventListener('click', function() {
+        renderTable(fetchedData);
+        document.getElementById('myChart').style.display = 'none';
+        document.getElementById('dataDisplayArea').style.display = 'block';
+    });
 });
+
+function renderTable(data) {
+    const tableContainer = document.getElementById('dataDisplayArea');
+    let tableHTML = "<table class='table'><thead><tr><th>Blood Type</th><th>Units Available</th></tr></thead><tbody>";
+
+    data.forEach(item => {
+        tableHTML += `<tr><td>${item.blood_type}</td><td>${item.units_available}</td></tr>`;
+    });
+
+    tableHTML += "</tbody></table>";
+    tableContainer.innerHTML = tableHTML;
+}
 
 function renderChart(labels, units) {
     const ctx = document.getElementById('myChart').getContext('2d');
