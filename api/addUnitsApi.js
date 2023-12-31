@@ -9,12 +9,7 @@ router.post('/addBloodUnits', (req, res) => {
         return res.status(400).json({ message: "Invalid data" });
     }
 
-    const query = `
-    INSERT INTO blood_inventory (blood_type, units_available) 
-    VALUES (?, ?)
-    ON DUPLICATE KEY UPDATE 
-    units_available = units_available + VALUES(units_available);
-`;
+    const query = `CALL addIntoBloodInventory( ? , ?)`;
     db.query(query, [blood_type, units_available], (err, result) => {
         if (err) {
             console.error(err);
@@ -32,11 +27,7 @@ router.post('/removeBloodUnits', (req, res) => {
         return res.status(400).json({ message: "Invalid data" });
     }
 
-    const query = `
-    UPDATE blood_inventory
-    SET units_available = GREATEST(0, units_available - ?)
-    WHERE blood_type = ?;
-    `;
+    const query = `CALL ReduceBloodUnits ( ? , ? )`;
     db.query(query, [units_available, blood_type], (err, result) => {
         if (err) {
             console.error(err);

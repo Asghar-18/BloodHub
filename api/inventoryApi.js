@@ -4,7 +4,7 @@ const db = require('../db.js'); // Adjust the path to your db.js file
 
 
 router.get('/inventory', (req, res) => {
-    const sql = 'SELECT blood_type, units_available FROM blood_inventory';
+    const sql = 'select * from view_blood_inventory';
     db.query(sql, (err, results) => {
       if (err) {
           console.error('Database query error:', err);

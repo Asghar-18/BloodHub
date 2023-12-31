@@ -1,5 +1,8 @@
 const path = require('path');
 const db = require('../db');
+const bcrypt = require('bcrypt');
+const saltRounds = 10;
+
 
 // Promise-based query function
 function query(sql, params) {
@@ -22,14 +25,15 @@ exports.signIn = async (req, res) => {
   try {
     const { email, password } = req.body;
 
-    // Query to find the user in the database
-    const userQuery = 'SELECT * FROM view_users WHERE email = ? AND password = ?';
-    const users = await query(userQuery, [email, password]);
+    const userQuery = 'SELECT * FROM view_users WHERE email = ?';
+    const users = await query(userQuery, [email]);
 
     if (users.length > 0) {
-      // User found
-      req.session.userId = users[0].user_id;
-      return res.redirect('/asghar');
+      const match = await bcrypt.compare(password, users[0].password);
+      if (match) {
+        req.session.userId = users[0].user_id;
+        return res.redirect('/asghar');
+      }
     } 
 
     // User not found, check in admins
@@ -60,18 +64,15 @@ exports.signUp = async (req, res) => {
     try {
         const { name, email, password } = req.body;
         
-        
         const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
         if (!emailRegex.test(email)) {
             return res.status(400).json({ message: 'Invalid email format' });
         }
 
-        // Insert the new user into the database with plain text password (not secure)
+        const hashedPassword = await bcrypt.hash(password, saltRounds);
         const query = 'INSERT INTO users (username, email, password) VALUES (?, ?, ?)';
-        await db.query(query, [name, email, password]);
+        await db.query(query, [name, email, hashedPassword]);
 
-
-        // Redirect or send a success message
         res.status(201).json({ message: 'User created successfully' });
     } catch (error) {
         console.error(error);
