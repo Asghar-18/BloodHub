@@ -10,6 +10,7 @@ const userRoutes = require('./routes/userRoutes');
 const donorRoutes = require('./routes/donorRoutes');
 const bloodTestingRoutes = require('./routes/bloodTestingRoutes');
 const customerRoutes = require('./routes/customerRoutes');
+const contactRoutes = require('./routes/contactRoutes');
 const userApi = require('./api/userApi');
 const countApi = require('./api/countApi');
 const bloodDataApi = require('./api/bloodDataApi');
@@ -66,6 +67,7 @@ app.use(isAuthenticated, userRoutes);
 app.use(isAuthenticated,donorRoutes);
 app.use(isAuthenticated,bloodTestingRoutes);
 app.use(isAuthenticated,customerRoutes);
+app.use(isAuthenticated,contactRoutes);
 // app.use(isAuthenticated,inventoryRoutes);
 
 
