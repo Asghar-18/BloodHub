@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appointment Schedule</title>
+    <link rel="icon" href="../Icons/blood-drop.png">
+    <link rel="stylesheet" href="styles/asghar.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <a href="/asghar" class="header-logo">💉 BloodCare</a>
+            <div class="header-nav">
+                <a href="/about">About</a>
+                <a href="/Appointment">Appointments</a>
+                <a href="/Inventory">Blood Bank</a>
+                <a href="/contact">Contact</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="registration">
+        <div class="container">
+            <h1>Contact US</h1>
+            <form class="registration-form" action="/register-customer" method="post">
+                <div class="form-group">
+                    <label for="full_name">Name:</label>
+                    <input type="text" id="full_name" name="full_name" placeholder="Enter your name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone_number">Phone:</label>
+                    <input type="tel" id="phone_number" name="phone_number" placeholder="Enter your phone number" required>
+                </div>
+                <div class="form-group">
+                    <label for="reason">Queries:</label>
+                    <textarea id="reason" name="reason" placeholder="Enter your Queries"></textarea>
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="submit-button">Submit</button>
+                </div>
+            </form>
+        </div>
+    </section>
+</body>
+
+<footer class="footer">
+    <div class="container">
+        &copy; 2023 BloodCare. All rights reserved.
+    </div>
+</footer>
+</html>
+

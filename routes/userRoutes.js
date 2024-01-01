@@ -48,4 +48,8 @@ router.get('/about', (req, res) => {
   router.get('/donor', (req, res) => {
     res.sendFile(path.join(__dirname,'..', 'views', 'Donor Registration', 'donor.html'));
   });
+
+  router.get('/contact', (req, res) => {
+    res.sendFile(path.join(__dirname,'..', 'views', 'contact', 'contactUs.html'));
+  });
   module.exports = router;
